@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Log Parser</title>
+</head>
+<body>
+    <h1>Logs Viewer</h1>
+
+    <form method="post">
+        <label>Filter by level:</label>
+        <select name="level">
+            <option value="">All</option>
+            <option value="INFO">INFO</option>
+            <option value="ERROR">ERROR</option>
+        </select>
+        <button type="submit">Filter</button>
+    </form>
+
+    <table border="1">
+        <tr>
+            <th>Date</th>
+            <th>Level</th>
+            <th>Message</th>
+        </tr>
+        {% for log in logs %}
+        <tr>
+            <td>{{ log.date }}</td>
+            <td>{{ log.level }}</td>
+            <td>{{ log.message }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
