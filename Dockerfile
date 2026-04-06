@@ -28,9 +28,10 @@ RUN wget https://github.com/prometheus/prometheus/releases/download/v2.42.0/prom
     && rm -rf prometheus-2.42.0.linux-amd64*
 
 # Installer Grafana binaire
+
 RUN wget https://dl.grafana.com/oss/release/grafana-10.2.4.linux-amd64.tar.gz \
     && tar -zxvf grafana-10.2.4.linux-amd64.tar.gz \
-    && mv grafana-10.2.4.linux-amd64 grafana \
+    && mv grafana-v10.2.4 grafana \
     && rm grafana-10.2.4.linux-amd64.tar.gz
 
 # Exposer les ports
