@@ -1,7 +1,9 @@
 from flask import Flask, render_template, request
 from parser import parse_log_file, filter_by_level
+from prometheus_flask_exporter import PrometheusMetrics
 
 app = Flask(__name__)
+metrics = PrometheusMetrics(app)
 
 LOG_FILE = "logs/app.log"
 
