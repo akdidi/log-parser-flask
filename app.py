@@ -3,7 +3,7 @@ from parser import parse_log_file, filter_by_level
 from prometheus_flask_exporter import PrometheusMetrics
 
 app = Flask(__name__)
-metrics = PrometheusMetrics(app)
+metrics = PrometheusMetrics(app, path="/metrics")
 
 LOG_FILE = "logs/app.log"
 
